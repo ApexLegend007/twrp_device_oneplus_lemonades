@@ -14,15 +14,11 @@ ALLOW_MISSING_DEPENDENCIES := true
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     system \
-    system \
-    system_ext \
     system_ext \
     product \
-    product \
     vendor \
-    vendor \
-    odm \
     odm
+
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
