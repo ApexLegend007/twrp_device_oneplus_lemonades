@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_lemonades.mk
+    $(LOCAL_DIR)/twrp_lemonades.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_lemonades-user \
-    omni_lemonades-userdebug \
-    omni_lemonades-eng
+    twrp_lemonades-user \
+    twrp_lemonades-userdebug \
+    twrp_lemonades-eng

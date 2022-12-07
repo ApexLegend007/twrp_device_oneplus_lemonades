@@ -11,13 +11,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Enable virtual A/B OTA
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from lemonades device
 $(call inherit-product, device/oneplus/lemonades/device.mk)
 
 PRODUCT_DEVICE := lemonades
-PRODUCT_NAME := omni_lemonades
+PRODUCT_NAME := twrp_lemonades
 PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := LE2101
 PRODUCT_MANUFACTURER := oneplus
