@@ -1,0 +1,46 @@
+import /init.recovery.services.qcom_decrypt.fbe.rc
+
+on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    install_keyring
+
+on property:vendor.sys.listeners.registered=true
+    start gatekeeper-1-0-qti
+
+on property:twrp.all.users.decrypted=true
+    setprop crypto.ready 0
+    stop qseecomd
+    stop gatekeeper-1-0-qti
+    stop keymaster-4-0-qti
+    stop keymaster-4-1-qti
+
+# For Android 10+ trees, services should be placed in /system/bin in the recovery ramdisk
+# For older trees, the services should be placed in /sbin
+# Make sure the path EXACTLY matches the final location of the binary!!
+#
+# NOTE: In pre-Android-10 trees using the latest "prepdecrypt" script, the vendor
+# services should be placed in the TWRP ramdisk in the same folder as in stock
+# (vendor/bin(/hw)) and the script will automatically relink them to /sbin.
+# If you prefer to put the binaries directly in /sbin, then you will need to manually
+# change the linker path in each binary from /system/bin/linker(64) to /sbin/linker(64)
+
+service gatekeeper-1-0-qti /system/bin/android.hardware.gatekeeper@1.0-service-qti
+    user root
+    group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service keystore_auth /system/bin/keystore_auth
+    oneshot
+    user system
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+# keystore is started and stopped on demand by TWRP
+service keystore /system/bin/keystore /tmp/misc/keystore
+    user root
+    group root drmrpc readproc log
+    disabled
+    seclabel u:r:recovery:s0
