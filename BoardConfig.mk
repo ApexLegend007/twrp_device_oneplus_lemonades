@@ -48,7 +48,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # fstab
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
