@@ -10,6 +10,12 @@ LOCAL_PATH := device/oneplus/lemonades
 # define hardware platform
 PRODUCT_PLATFORM := kona
 
+#SHIPPING API
+PRODUCT_SHIPPING_API_LEVEL := 30
+
+#VNDK API
+PRODUCT_TARGET_VNDK_VERSION := 31
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
