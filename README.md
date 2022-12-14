@@ -14,8 +14,9 @@ repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifes
 
 1:= https://gerrit.twrp.me/c/android_system_update_engine/+/5759
 2:= https://gerrit.twrp.me/c/android_bootable_recovery/+/5691
+3:= https://gerrit.twrp.me/c/android_build/+/5445
 ## Below is an optional Cherry-pick For the device if you want to add it
-3:= https://gerrit.twrp.me/c/android_system_core/+/5658 
+4:= https://gerrit.twrp.me/c/android_system_core/+/5658 
 
 ## Make a directory named local_manifest under .repo, and create a new manifest file, for example local_manifests.xml and then paste the following
 
