@@ -49,10 +49,20 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
     
+# fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd \
+    resetprop
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
     
+# tzdata
+PRODUCT_PACKAGES_ENG += \
+    tzdata_twrp
+
 #TWRP
 PRODUCT_COPY_FILES += \
     device/oneplus/lemonades/prebuilt/systemmanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/manifest.xml \
