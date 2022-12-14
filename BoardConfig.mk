@@ -115,6 +115,9 @@ TARGET_BOARD_PLATFORM := kona
 # Props
 TARGET_SYSTEM_PROP +=$(DEVICE_PATH)/system.prop
 
+# Partitions (listed in the file) to be wiped under recovery.
+TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery.wipe
+
 # Recovery
 TARGET_NO_RECOVERY := false
 TARGET_RECOVERY_DEVICE_MODULES += \
