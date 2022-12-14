@@ -39,11 +39,6 @@ PRODUCT_PACKAGES += \
     bootctrl.$(PRODUCT_PLATFORM) \
     bootctrl.$(PRODUCT_PLATFORM).recovery \
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    libgptutils \
-    libz \
-    libcutils
-
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
